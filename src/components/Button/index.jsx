@@ -1,11 +1,22 @@
-import React from 'react';
+import React from 'react'
+import PropTypes from 'prop-types'
+import * as Style from './styles'
+import { BiLoaderCircle } from 'react-icons/bi'
 
-const Button = () => {
+const Button = ({ loading, children, ...props }) => {
     return (
-        <div>
+        <Style.Container {...props} disabled={loading}>
+            {loading && <BiLoaderCircle />}
+            {children}
+        </Style.Container>
+    )
+}
 
-        </div>
-    );
-};
+Button.propTypes = {
+    children: PropTypes.node.isRequired,
+    props: PropTypes.any,
+    loading: PropTypes.bool,
+    variant: PropTypes.object,
+}
 
-export default Button;
+export default Button

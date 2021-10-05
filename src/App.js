@@ -1,11 +1,15 @@
 import GlobalStyles from './styles/reset'
-import SideBar from './components/SibBar'
+import Input from './components/input'
+import { FaUser } from 'react-icons/fa'
 
 function App() {
     return (
         <>
             <GlobalStyles />
-            <SideBar />
+            <div style={{ margin: 100 }}>
+                <Input />
+                <Input icon={<FaUser />} />
+            </div>
         </>
     )
 }
