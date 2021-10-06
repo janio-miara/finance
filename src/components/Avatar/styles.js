@@ -3,8 +3,9 @@ import { theme } from '../../styles/themes'
 
 const changeSize = {
     small: css`
-        height: 40px;
-        width: 40px;
+        height: 30px;
+        width: 30px;
+        font-size: ${theme.fontSizes.p4};
     `,
     medium: css`
         height: 60px;

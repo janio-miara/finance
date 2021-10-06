@@ -17,6 +17,7 @@ Button.propTypes = {
     props: PropTypes.any,
     loading: PropTypes.bool,
     variant: PropTypes.object,
+    outline: PropTypes.bool,
 }
 
 export default Button
