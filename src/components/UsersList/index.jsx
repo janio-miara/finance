@@ -1,16 +1,17 @@
 import React, { useState } from 'react'
-import { dataUser } from '../../data/usersData'
 import { Container, Wrapper } from './styles'
 import Avatar from '../Avatar'
 import { FaTasks, FaTrash } from 'react-icons/fa'
 import ButonRadius from '../ButtonRadius'
 import ModalExcluirUser from './MoldaExcluirUser'
+import { useUsers } from '../../context/userContext'
 
 const ListUsers = () => {
+    const { users } = useUsers()
     const [open, setOpen] = useState(false)
     const [user, setUser] = useState('')
 
-    const deleteUser = (name) => {
+    const openModalExcluirUser = (name) => {
         setOpen(true)
         setUser(name)
     }
@@ -18,7 +19,7 @@ const ListUsers = () => {
     return (
         <>
             <Container>
-                {dataUser.map((user) => (
+                {users?.map((user) => (
                     <Wrapper>
                         <div className={'title'}>
                             <Avatar name={user.name} size={'small'} />
@@ -30,7 +31,7 @@ const ListUsers = () => {
                                 icon={<FaTrash />}
                                 variant={'error'}
                                 outline
-                                onClick={() => deleteUser(user)}
+                                onClick={() => openModalExcluirUser(user)}
                             />
                         </div>
                     </Wrapper>

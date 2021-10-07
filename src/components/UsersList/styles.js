@@ -4,13 +4,13 @@ import { theme } from '../../styles/themes'
 export const Container = styled.div`
     width: 600px;
     height: 100%;
+    overflow-y: scroll;
 `
 
 export const Wrapper = styled.div`
     margin: 8px;
     display: flex;
     justify-content: space-between;
-
     padding: 0 16px;
     border-radius: 4px;
     background-color: ${theme.colors.white};

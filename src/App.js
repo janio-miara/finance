@@ -1,29 +1,26 @@
 import GlobalStyles from './styles/reset'
-import Input from './components/input'
-import { FaUser } from 'react-icons/fa'
-import Modal from './components/Modal'
-import { useState } from 'react'
-import Button from './components/Button'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import ListUsers from './components/UsersList'
+import Layout from './components/Layout'
+import Providers from './context'
 
 function App() {
-    const [open, setOpen] = useState(false)
     return (
-        <>
+        <Router>
             <GlobalStyles />
-            <div style={{ margin: 100 }}>
-                <Button onClick={() => setOpen(true)}>Cadastrar Usuario</Button>
-                <Modal
-                    open={open}
-                    close={() => setOpen(false)}
-                    title="Cadastrar Usuario"
-                    textAction="Salvar"
-                >
-                    <Input icon={<FaUser />} />
-                </Modal>
-                <ListUsers />
-            </div>
-        </>
+            <Providers>
+                <Switch>
+                    <Layout>
+                        <Route exact path="/">
+                            <ListUsers />
+                        </Route>
+                        <Route path="/task">
+                            <div>Task</div>
+                        </Route>
+                    </Layout>
+                </Switch>
+            </Providers>
+        </Router>
     )
 }
 

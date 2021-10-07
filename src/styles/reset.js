@@ -9,7 +9,6 @@ export default createGlobalStyle`
   }
 
   body {
-    background-color: #cbcaca;
     overflow: hidden;
     -webkit-font-smoothing: antialiased;
     font-size: 14px;
