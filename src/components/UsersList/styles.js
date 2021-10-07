@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import { theme } from '../../styles/themes'
 
 export const Container = styled.div`
@@ -29,7 +29,7 @@ export const Wrapper = styled.div`
     .action {
         display: flex;
         align-items: center;
-        svg {
+        button {
             margin-left: 8px;
         }
     }

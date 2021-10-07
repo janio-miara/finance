@@ -6,6 +6,7 @@ import PropTypes from 'prop-types'
 
 export const Modal = ({
     actionClick,
+    textAction,
     open,
     title,
     close,
@@ -25,9 +26,11 @@ export const Modal = ({
                         </header>
                         <div className="body">{children}</div>
                         <footer>
-                            <Button color="primary" onClick={actionClick}>
-                                Salvar
-                            </Button>
+                            {textAction && (
+                                <Button color="primary" onClick={actionClick}>
+                                    {textAction}
+                                </Button>
+                            )}
                             <Button onClick={close} outline>
                                 Fechar
                             </Button>

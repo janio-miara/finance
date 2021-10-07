@@ -4,7 +4,7 @@ import { FaUser } from 'react-icons/fa'
 import Modal from './components/Modal'
 import { useState } from 'react'
 import Button from './components/Button'
-import ListUsers from './components/ListUsers'
+import ListUsers from './components/UsersList'
 
 function App() {
     const [open, setOpen] = useState(false)
@@ -17,6 +17,7 @@ function App() {
                     open={open}
                     close={() => setOpen(false)}
                     title="Cadastrar Usuario"
+                    textAction="Salvar"
                 >
                     <Input icon={<FaUser />} />
                 </Modal>
