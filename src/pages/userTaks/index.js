@@ -1,9 +1,13 @@
 import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import CardTaskList from '../../components/CardTaskList'
+import CardTaskList from '../../components/Tasks/CardTaskList'
 import Button from '../../components/Button'
 import { useTask } from '../../context/taskContext'
 import ModalCreateTask from '../../components/Tasks/ModalCreateTask'
+import { Container } from './styles'
+import { BiArrowBack } from 'react-icons/bi'
+import ButonRadius from '../../components/ButtonRadius'
+import { Link } from 'react-router-dom'
 
 const UserTask = () => {
     let { id } = useParams()
@@ -14,7 +18,11 @@ const UserTask = () => {
     }, [id])
 
     return (
-        <div style={{ width: '600px' }}>
+        <Container>
+            <Link to={'/'} className={'back'}>
+                <ButonRadius icon={<BiArrowBack />} outline />
+                <p>Lista de Usuarios</p>
+            </Link>
             <Button onClick={() => openModalTask()}>Cadastrar Tarefa</Button>
             <div>
                 {tasks?.map((el) => {
@@ -22,7 +30,7 @@ const UserTask = () => {
                 })}
             </div>
             <ModalCreateTask id={id} />
-        </div>
+        </Container>
     )
 }
 

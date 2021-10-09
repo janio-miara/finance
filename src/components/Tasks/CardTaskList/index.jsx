@@ -1,9 +1,8 @@
 import React from 'react'
-import ButonRadius from '../ButtonRadius'
+import ButonRadius from '../../ButtonRadius'
 import { FaTrash } from 'react-icons/fa'
 import { Container } from './styles'
 import { RiCheckboxBlankCircleLine, RiCheckboxCircleFill } from 'react-icons/ri'
-import { useTask } from '../../context/taskContext'
 
 const CardTaskList = ({ task }) => {
     return (

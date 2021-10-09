@@ -60,8 +60,10 @@ const changeBackgroundOutline = {
 export const Container = styled.button`
     display: flex;
     border: none;
-    padding: ${theme.spacing.space1} ${theme.spacing.space3};
-    border-radius: ${theme.spacing.space2};
+    align-items: center;
+    justify-content: center;
+    padding: ${theme.spacing.space2} ${theme.spacing.space3};
+    border-radius: ${theme.spacing.space1};
     color: white;
     font-weight: bold;
     font-size: ${theme.fontSizes.p3};

@@ -5,10 +5,10 @@ import {
     Route,
     useParams,
 } from 'react-router-dom'
-import ListUsers from './components/UsersList'
 import Layout from './components/Layout'
 import Providers from './context'
 import UserTask from './pages/userTaks'
+import Users from './pages/users'
 
 function App() {
     return (
@@ -18,7 +18,7 @@ function App() {
                 <Switch>
                     <Layout>
                         <Route exact path="/">
-                            <ListUsers />
+                            <Users />
                         </Route>
                         <Route path="/tasks/:id">
                             <UserTask />
