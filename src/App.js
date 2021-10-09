@@ -1,8 +1,14 @@
 import GlobalStyles from './styles/reset'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    useParams,
+} from 'react-router-dom'
 import ListUsers from './components/UsersList'
 import Layout from './components/Layout'
 import Providers from './context'
+import UserTask from './pages/userTaks'
 
 function App() {
     return (
@@ -14,8 +20,8 @@ function App() {
                         <Route exact path="/">
                             <ListUsers />
                         </Route>
-                        <Route path="/task">
-                            <div>Task</div>
+                        <Route path="/tasks/:id">
+                            <UserTask />
                         </Route>
                     </Layout>
                 </Switch>

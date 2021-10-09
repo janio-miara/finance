@@ -1,3 +1,8 @@
 import { UsersProvider } from './userContext'
-const Providers = ({ children }) => <UsersProvider>{children}</UsersProvider>
+import { TaskProvider } from './taskContext'
+const Providers = ({ children }) => (
+    <UsersProvider>
+        <TaskProvider>{children}</TaskProvider>
+    </UsersProvider>
+)
 export default Providers
